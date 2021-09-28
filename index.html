@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Teacher Evolution Page</title>
+</head>
+<body>
+<div class="container">
+    <div class="header-section">
+        <div class="header-section-box">
+             <span class="center-item header-title">Teacher Evolution Form</span>
+                <div class="header-text">
+                    <div class="row">
+                         <span class="header-left col-6"><strong>Teacher's Name: </strong> &nbsp; Albus Dumbledore</span>
+                         <span class="header-right col-6"><strong>Course: </strong> &nbsp; Defence Against the Dark Arts</span>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="question-section">
+        <div id="question-container" class="question-container">
+
+        </div>
+    </div>
+   
+
+    <div class="footer-section">
+        <div class="footer-body">
+            <span>Thanks for your Contribution</span>
+        </div>
+        
+        <div class="h-line-container">
+            <div class="horizontal-line"></div>
+       </div>
+    </div>
+</div>
+
+<script>
+    const q_data=[
+        {
+            id:1,
+            text: 'Most of the schooling staff in the institute have a unified vision.',
+        },
+        {
+            id:2,
+            text: 'My teachers asks each one of us whether we have understood what she taught and helps us in case we have doubts.',
+        },
+        {
+            id:3,
+            text: 'Your teacher guides you in setting personal targets and developing strategies to achieve that target.',
+        },
+        {
+            id:4,
+            text: 'My teacher has fair rules for the class and is extremely impartial.',
+        },
+        {
+            id:5,
+            text: 'How would you evaluate the overall academic experience you had with this professor in our university program?',
+        },
+        {
+            id:6,
+            text: 'Your teacher appreciates the times when you work hard towards scoring well in a test or performing well in extracurricular activities.',
+        },
+    ];
+    const q_container = document.getElementById('question-container');
+    q_data.map((item)=>{
+        const q_item_box =`
+        <div class="question-item-box">
+                    <div class="question-text">
+                        <span>
+                            <strong>Q.</strong> 
+                            &nbsp;
+                           ${item.text}
+                    </div>
+                    <div class="ans-options">
+                        <form action="#">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stronglyAgree" name="stronglyAgree" value="5">
+                                <label for="stronglyAgree"> Strongly Agree</label><br>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="agree" name="agree" value="4">
+                                <label for="agree"> Agree</label><br>  
+                            </div>
+                         <div class="checkbox-item">
+                                <input type="checkbox" id="neutral" name="neutral" value="3">
+                                <label for="neutral"> Neutral</label><br>
+                         </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="disagree" name="disagree" value="2">
+                                <label for="disagree"> Disagree</label><br>
+                            </div class="checkbox-item">
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stronglyDisagree" name="stronglyDisagree" value="1">
+                                <label for="stronglyDisagree"> Strongly Disagree</label><br>
+                            </div>
+                            <div class="checkbox-btn">
+                               <input type="submit" class="btn-submit" value="Submit">
+                            </div>
+                          </form>
+                    </div>
+        </div>`;
+        q_container.innerHTML += q_item_box;
+    });
+    </script>
+    
+</body>
+</html>
